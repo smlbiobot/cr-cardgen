@@ -85,7 +85,8 @@
         },
         "battle-ram": {
             "aka": [
-                "br"
+                "br",
+                "ram"
             ],
             "elixir": 4,
             "rarity": "rare",
@@ -126,6 +127,17 @@
             "tid": "TID_SPELL_INFO_CANNON",
             "cpid": "Cannon",
             "sfid": "cannon"
+        },
+        "cannon-cart": {
+            "aka": [
+                "cc",
+                "cart"
+            ],
+            "elixir": 5,
+            "rarity": "epic",
+            "tid": "TID_SPELL_MOVING_CANNON",
+            "cpid": "Cannon Cart",
+            "sfid": "cannon_cart"
         },
         "clone": {
             "aka": [],
@@ -225,6 +237,18 @@
             "tid": "TID_SPELL_INFO_FIREBALL",
             "cpid": "Fireball",
             "sfid": "fireball"
+        },
+        "flying-machine": {
+            "aka": [
+                "fm",
+                "fly",
+                "machine"
+            ],
+            "elixir": 4,
+            "rarity": "rare",
+            "tid": "TID_SPELL_INFO_FLYING_MACHINE",
+            "cpid": "Flying Machine",
+            "sfid": "flying_machine"
         },
         "freeze": {
             "aka": [],
@@ -443,6 +467,17 @@
             "cpid": "Lumberjack",
             "sfid": "lumberjack"
         },
+        "mega-knight": {
+            "aka": [
+                "mk",
+                "mknight"
+            ],
+            "elixir": 7,
+            "rarity": "legendary",
+            "tid": "TID_SPELL_INFO_MEGAKNIGHT",
+            "cpid": "Mega Knight",
+            "sfid": "mega_knight"
+        },
         "mega-minion": {
             "aka": [
                 "mm",
@@ -543,7 +578,7 @@
         "poison": {
             "aka": [],
             "elixir": 4,
-            "rarity": "rare",
+            "rarity": "epic",
             "tid": "TID_SPELL_INFO_POISON",
             "cpid": "Poison",
             "sfid": "poison"
@@ -601,6 +636,17 @@
             "tid": "TID_SPELL_INFO_SKELETON_HORDE",
             "cpid": "Skeleton Army",
             "sfid": "skeleton_army"
+        },
+        "skeleton-barrel": {
+            "aka": [
+                "sbarrel",
+                "sb"
+            ],
+            "elixir": 3,
+            "rarity": "common",
+            "tid": "TID_SPELL_SKELETON_BALLOON",
+            "cpid": "Skeleton Barrel",
+            "sfid": "skeleton_barrel"
         },
         "skeletons": {
             "aka": [
