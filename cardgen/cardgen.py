@@ -3,9 +3,10 @@
 import os
 import json
 import sys
+import yaml
 from PIL import Image
 
-CONFIG = os.path.join("config.json")
+CONFIG = os.path.join("config.yaml")
 
 
 def load_json(filename):
@@ -17,13 +18,18 @@ def load_json(filename):
 
 def generate_cards():
     """Generate Clash Royale cards."""
-    config = load_json(CONFIG)
+    with open(CONFIG) as f:
+        config = yaml.load(f)
+
     crdata = load_json(config["crdata"])
+
     src_path = config["src_dir"]
     spells_path = config["spells_dir"]
     output_path = config["output_dir"]
 
     cards = crdata["Cards"]
+
+    filenames = dict((v, k) for k, v in config["cards"].items())
 
     card_frame = Image.open(os.path.join(src_path, "frame-card.png"))
     leggie_frame = Image.open(os.path.join(src_path, "frame-legendary.png"))
@@ -41,7 +47,8 @@ def generate_cards():
     for card_key, card_value in cards.items():
         name = card_key
         rarity = card_value["rarity"]
-        card_src = os.path.join(spells_path, "{}.png".format(name))
+        # card_src = os.path.join(spells_path, "{}.png".format(name))
+        card_src = os.path.join(spells_path, "{}.png".format(filenames[name]))
         card_dst = os.path.join(output_path, "{}.png".format(name))
         card_image = Image.open(card_src)
 
