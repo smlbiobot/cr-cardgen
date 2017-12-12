@@ -1,6 +1,7 @@
 crdata: ./clashroyale.json
+cards_data: ./cards.json
 src_dir: ./src
-spells_dir: ./ui_spells_out
+spells_dir: ./card-src-236x300
 output_dir: ./card-png
 cards:
   ui_spells_sprite_00: sparky
@@ -25,45 +26,45 @@ cards:
   ui_spells_sprite_19: gems-2
   ui_spells_sprite_20: gems-1
   ui_spells_sprite_21: royal-giant
-  ui_spells_sprite_22: rocket
-  ui_spells_sprite_23: lumberjack
-  ui_spells_sprite_24: rage
-  ui_spells_sprite_25: princess
-  ui_spells_sprite_26: prince
-  ui_spells_sprite_27: poison
-  ui_spells_sprite_28: pekka
-  ui_spells_sprite_29: arrows
-  ui_spells_sprite_30: musketeer
-  ui_spells_sprite_31: minion-horde
-  ui_spells_sprite_32: minions
-  ui_spells_sprite_33: mini-pekka
-  ui_spells_sprite_34: miner
-  ui_spells_sprite_35: mega-minion
-  ui_spells_sprite_36: mega-knight
-  ui_spells_sprite_37: the-log
-  ui_spells_sprite_38: lightning
-  ui_spells_sprite_39: lava-hound
-  ui_spells_sprite_40: knight
-  ui_spells_sprite_41: inferno-dragon
-  ui_spells_sprite_42: ice-wizard
-  ui_spells_sprite_43: ice-golem
-  ui_spells_sprite_44: hog-rider
-  ui_spells_sprite_45: heal
-  ui_spells_sprite_46: graveyard
-  ui_spells_sprite_47: gold
-  ui_spells_sprite_48: goblins
-  ui_spells_sprite_49: dart-goblin
-  ui_spells_sprite_50: goblin-gang
-  ui_spells_sprite_51: goblin-barrel
-  ui_spells_sprite_52: spear-goblins
-  ui_spells_sprite_53: giant-skeleton
-  ui_spells_sprite_54: giant
-  ui_spells_sprite_55: gems
-  ui_spells_sprite_56: freeze
-  ui_spells_sprite_57: flying-machine
-  ui_spells_sprite_58: furnace
-  ui_spells_sprite_59: fire-spirits
-  ui_spells_sprite_60: goblin-hut
+  ui_spells_sprite_22: knight
+  ui_spells_sprite_23: archers
+  ui_spells_sprite_24: rocket
+  ui_spells_sprite_25: lumberjack
+  ui_spells_sprite_26: rage
+  ui_spells_sprite_27: princess
+  ui_spells_sprite_28: prince
+  ui_spells_sprite_29: poison
+  ui_spells_sprite_30: pekka
+  ui_spells_sprite_31: arrows
+  ui_spells_sprite_32: musketeer
+  ui_spells_sprite_33: minion-horde
+  ui_spells_sprite_34: minions
+  ui_spells_sprite_35: mini-pekka
+  ui_spells_sprite_36: miner
+  ui_spells_sprite_37: mega-minion
+  ui_spells_sprite_38: mega-knight
+  ui_spells_sprite_39: the-log
+  ui_spells_sprite_40: lightning
+  ui_spells_sprite_41: lava-hound
+  ui_spells_sprite_42: inferno-dragon
+  ui_spells_sprite_43: ice-wizard
+  ui_spells_sprite_44: ice-golem
+  ui_spells_sprite_45: hog-rider
+  ui_spells_sprite_46: heal
+  ui_spells_sprite_47: graveyard
+  ui_spells_sprite_48: gold
+  ui_spells_sprite_49: goblins
+  ui_spells_sprite_50: dart-goblin
+  ui_spells_sprite_51: goblin-gang
+  ui_spells_sprite_52: goblin-barrel
+  ui_spells_sprite_53: spear-goblins
+  ui_spells_sprite_54: giant-skeleton
+  ui_spells_sprite_55: giant
+  ui_spells_sprite_56: gems
+  ui_spells_sprite_57: freeze
+  ui_spells_sprite_58: flying-machine
+  ui_spells_sprite_59: furnace
+  ui_spells_sprite_60: fire-spirits
   ui_spells_sprite_61: fireball
   ui_spells_sprite_62: executioner
   ui_spells_sprite_63: electro-wizard
@@ -75,23 +76,26 @@ cards:
   ui_spells_sprite_69: balloon
   ui_spells_sprite_70: cannon
   ui_spells_sprite_71: cannon-cart
-  ui_spells_sprite_72: xbow
-  ui_spells_sprite_73: tesla
-  ui_spells_sprite_74: mortar
-  ui_spells_sprite_75: inferno-tower
-  ui_spells_sprite_76: elixir-collector
-  ui_spells_sprite_77: bowler
-  ui_spells_sprite_78: bomber
-  ui_spells_sprite_79: bomb-tower
-  ui_spells_sprite_80: battle-ram
-  ui_spells_sprite_81: bats
-  ui_spells_sprite_82: barbarians
-  ui_spells_sprite_83: barbarian-hut
-  ui_spells_sprite_84: bandit
-  ui_spells_sprite_85: baby-dragon
-  ui_spells_sprite_86: archers
-  ui_spells_sprite_87: elite-barbarians
-  ui_spells_sprite_88: empty-1
-  ui_spells_sprite_89: empty-2
-  ui_spells_sprite_90: soon
-  ui_spells_sprite_91: mirror
+  ui_spells_sprite_72: x-bow
+  ui_spells_sprite_73: inferno-tower
+  ui_spells_sprite_74: elixir-collector
+  ui_spells_sprite_75: bowler
+  ui_spells_sprite_76: bomber
+  ui_spells_sprite_77: bomb-tower
+  ui_spells_sprite_78: battle-ram
+  ui_spells_sprite_79: bats
+  ui_spells_sprite_80: barbarians
+  ui_spells_sprite_81: barbarian-hut
+  ui_spells_sprite_82: bandit
+  ui_spells_sprite_83: baby-dragon
+  ui_spells_sprite_84: elite-barbarians
+  ui_spells_sprite_85: empty-1
+  ui_spells_sprite_86: empty-2
+  ui_spells_sprite_87: soon
+  ui_spells_sprite_88: mirror
+  ui_spells_sprite_89: goblin-hut
+  ui_spells_sprite_90: tesla
+  ui_spells_sprite_91: mortar
+  ui_spell_ghost: royal-ghost
+  ui_spell_hunter: hunter
+  ui_spell_zappies: zappies

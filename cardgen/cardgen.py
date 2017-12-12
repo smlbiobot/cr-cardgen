@@ -21,13 +21,11 @@ def generate_cards():
     with open(CONFIG) as f:
         config = yaml.load(f)
 
-    crdata = load_json(config["crdata"])
+    cards_data = load_json(config["cards_data"])
 
     src_path = config["src_dir"]
     spells_path = config["spells_dir"]
     output_path = config["output_dir"]
-
-    cards = crdata["Cards"]
 
     filenames = dict((v, k) for k, v in config["cards"].items())
 
@@ -44,16 +42,15 @@ def generate_cards():
 
     size = card_frame.size
 
-    for card_key, card_value in cards.items():
-        name = card_key
-        rarity = card_value["rarity"]
-        # card_src = os.path.join(spells_path, "{}.png".format(name))
+    for card_data in cards_data:
+        name = card_data['key']
+        rarity = card_data['rarity']
         card_src = os.path.join(spells_path, "{}.png".format(filenames[name]))
         card_dst = os.path.join(output_path, "{}.png".format(name))
         card_image = Image.open(card_src)
 
         # scale card to fit frame
-        scale = 1.25
+        scale = 1
         card_image = card_image.resize(
             [int(dim * scale) for dim in card_image.size])
 
@@ -71,7 +68,7 @@ def generate_cards():
 
         im = Image.new("RGBA", size)
 
-        if rarity == "legendary":
+        if rarity == "Legendary":
             im.paste(card_image, mask=leggie_mask)
         else:
             im.paste(card_image, mask=card_mask)
@@ -83,20 +80,20 @@ def generate_cards():
 
         # use background image for regular cards
         bg = None
-        if rarity == "commons":
+        if rarity == "Commons":
             bg = commons_bg
-        elif rarity == "rare":
+        elif rarity == "Rare":
             bg = rare_bg
-        elif rarity == "epic":
+        elif rarity == "Epic":
             bg = epic_bg
-        elif rarity == "legendary":
+        elif rarity == "Legendary":
             bg = leggie_bg
         else:
             bg = Image.new("RGBA", size)
 
         # add frame
         im = Image.alpha_composite(bg, im)
-        if rarity == "legendary":
+        if rarity == "Legendary":
             im = Image.alpha_composite(im, leggie_frame)
         else:
             im = Image.alpha_composite(im, card_frame)
