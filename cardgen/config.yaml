@@ -1,4 +1,3 @@
-crdata: ./clashroyale.json
 cards_data: ./cards.json
 src_dir: ./src
 spells_dir: ./card-src-236x300
