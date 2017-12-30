@@ -5,6 +5,7 @@ import json
 import sys
 import yaml
 from PIL import Image
+from PIL import ImageCms
 
 CONFIG = os.path.join("config.yaml")
 
@@ -20,6 +21,18 @@ def generate_cards():
     """Generate Clash Royale cards."""
     with open(CONFIG) as f:
         config = yaml.load(f)
+
+
+    # color managemenet
+    color_profile = ImageCms.createProfile('sRGB')
+    color_transform = ImageCms.buildTransformFromOpenProfiles
+
+    # with open('./sRGB2014.icc') as f:
+    #     sRGB_profile = f.read()
+
+
+
+    # generate cards
 
     cards_data = load_json(config["cards_data"])
 
@@ -99,7 +112,10 @@ def generate_cards():
             im = Image.alpha_composite(im, card_frame)
 
         # save and output path to std out
-        im.save(card_dst)
+
+        converted_im = ImageCms.profileToProfile(im, './AdobeRGB1998.icc', 'sRGB.icc')
+        converted_im.save(card_dst)
+
         print(card_dst)
 
 
