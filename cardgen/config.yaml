@@ -1,7 +1,8 @@
 cards_data: ./cards.json
 src_dir: ./src
 spells_dir: ./card-src-236x300
-output_dir: ./card-png
+output_png24_dir: ./card-png
+output_png8_dir: ./card-png8
 cards:
   ui_spells_sprite_00: sparky
   ui_spells_sprite_01: zap

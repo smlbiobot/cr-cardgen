@@ -38,7 +38,8 @@ def generate_cards():
 
     src_path = config["src_dir"]
     spells_path = config["spells_dir"]
-    output_path = config["output_dir"]
+    output_png24_dir = config["output_png24_dir"]
+    output_png8_dir = config["output_png8_dir"]
 
     filenames = dict((v, k) for k, v in config["cards"].items())
 
@@ -59,7 +60,8 @@ def generate_cards():
         name = card_data['key']
         rarity = card_data['rarity']
         card_src = os.path.join(spells_path, "{}.png".format(filenames[name]))
-        card_dst = os.path.join(output_path, "{}.png".format(name))
+        card_dst_png24 = os.path.join(output_png24_dir, "{}.png".format(name))
+        card_dst_png8 = os.path.join(output_png8_dir, "{}.png".format(name))
         card_image = Image.open(card_src)
 
         # scale card to fit frame
@@ -114,9 +116,26 @@ def generate_cards():
         # save and output path to std out
 
         converted_im = ImageCms.profileToProfile(im, './AdobeRGB1998.icc', 'sRGB.icc')
-        converted_im.save(card_dst)
+        converted_im.save(card_dst_png24)
+        print(card_dst_png24)
 
-        print(card_dst)
+        # # Save optimized PNG (PNG-8)
+        #
+        # # Optimize PNG
+        # alpha = converted_im.split()[-1]
+        # opt_im = converted_im.convert('RGB').convert('P', palette=Image.ADAPTIVE, colors=255)
+        #
+        # # Set all pixel values below 128 to 255,
+        # # and the rest to 0
+        # mask = Image.eval(alpha, lambda a: 255 if a <= 128 else 0)
+        #
+        # # Paste the color of index 255 and use alpha as a mask
+        # opt_im.paste(255, mask)
+        #
+        # opt_im.save(card_dst_png8, transparency=255)
+        # print(card_dst_png8)
+
+
 
 
 def main(arguments):
