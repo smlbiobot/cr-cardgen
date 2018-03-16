@@ -119,21 +119,6 @@ def generate_cards():
         converted_im.save(card_dst_png24)
         print(card_dst_png24)
 
-        # # Save optimized PNG (PNG-8)
-        #
-        # # Optimize PNG
-        # alpha = converted_im.split()[-1]
-        # opt_im = converted_im.convert('RGB').convert('P', palette=Image.ADAPTIVE, colors=255)
-        #
-        # # Set all pixel values below 128 to 255,
-        # # and the rest to 0
-        # mask = Image.eval(alpha, lambda a: 255 if a <= 128 else 0)
-        #
-        # # Paste the color of index 255 and use alpha as a mask
-        # opt_im.paste(255, mask)
-        #
-        # opt_im.save(card_dst_png8, transparency=255)
-        # print(card_dst_png8)
 
 
 
