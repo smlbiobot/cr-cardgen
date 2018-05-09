@@ -7,7 +7,7 @@ import os
 
 token = os.environ.get('TOKEN')
 
-r = requests.get('http://api.cr-api.com/player/C0G20PR2', headers={'auth': token})
+r = requests.get('http://api.royaleapi.com/player/C0G20PR2', headers={'auth': token})
 player = r.json()
 print(player)
 
