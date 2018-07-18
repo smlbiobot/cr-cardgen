@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 
-import os
 import json
+import os
 import sys
+
 import yaml
 from PIL import Image
 from PIL import ImageCms
+
+import requests
 
 CONFIG = os.path.join("config.yaml")
 
@@ -17,24 +20,22 @@ def load_json(filename):
     return data
 
 
+def get_cards_data(config, local=False):
+    if local:
+        cards_data = load_json(config["cards_data"])
+    else:
+        r = requests.get(config["cards_data_url"])
+        cards_data = r.json()
+
+    return cards_data
+
+
 def generate_cards():
     """Generate Clash Royale cards."""
     with open(CONFIG) as f:
         config = yaml.load(f)
 
-
-    # color managemenet
-    color_profile = ImageCms.createProfile('sRGB')
-    color_transform = ImageCms.buildTransformFromOpenProfiles
-
-    # with open('./sRGB2014.icc') as f:
-    #     sRGB_profile = f.read()
-
-
-
-    # generate cards
-
-    cards_data = load_json(config["cards_data"])
+    cards_data = get_cards_data(config, local=False)
 
     src_path = config["src_dir"]
     spells_path = config["spells_dir"]
@@ -118,9 +119,6 @@ def generate_cards():
         converted_im = ImageCms.profileToProfile(im, './AdobeRGB1998.icc', 'sRGB.icc')
         converted_im.save(card_dst_png24)
         print(card_dst_png24)
-
-
-
 
 
 def main(arguments):

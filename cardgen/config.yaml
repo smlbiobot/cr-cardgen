@@ -1,4 +1,5 @@
 cards_data: ./cards.json
+cards_data_url: https://royaleapi.github.io/cr-api-data/json/cards.json
 src_dir: ./src
 spells_dir: ./card-src-236x300
 output_png24_dir: ./card-png
@@ -104,3 +105,4 @@ cards:
   ui_spell_rascals: rascals
   ui_spell_royal_hogs: royal-hogs
   ui_spell_giant_snowball: giant-snowball
+  ui_spell_royal_recruits: royal-recruits
