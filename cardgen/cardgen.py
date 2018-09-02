@@ -35,7 +35,7 @@ def generate_cards():
     with open(CONFIG) as f:
         config = yaml.load(f)
 
-    cards_data = get_cards_data(config, local=False)
+    cards_data = get_cards_data(config, local=True)
 
     src_path = config["src_dir"]
     spells_path = config["spells_dir"]
