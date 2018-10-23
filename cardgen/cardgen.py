@@ -9,6 +9,11 @@ from PIL import Image
 from PIL import ImageCms
 
 import requests
+import logging
+
+
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO)
 
 CONFIG = os.path.join("config.yaml")
 
@@ -60,7 +65,14 @@ def generate_cards():
     for card_data in cards_data:
         name = card_data['key']
         rarity = card_data['rarity']
-        card_src = os.path.join(spells_path, "{}.png".format(filenames[name]))
+
+        filename = filenames.get(name)
+
+        if filename is None:
+            logger.warning(f"{name} does not have a corresponding file, continuing…")
+            continue
+
+        card_src = os.path.join(spells_path, "{}.png".format(filename))
         card_dst_png24 = os.path.join(output_png24_dir, "{}.png".format(name))
         card_dst_png8 = os.path.join(output_png8_dir, "{}.png".format(name))
         card_image = Image.open(card_src)
@@ -118,7 +130,7 @@ def generate_cards():
 
         converted_im = ImageCms.profileToProfile(im, './AdobeRGB1998.icc', 'sRGB.icc')
         converted_im.save(card_dst_png24)
-        print(card_dst_png24)
+        logger.info(card_dst_png24)
 
 
 def main(arguments):
