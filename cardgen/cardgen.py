@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
 
 import json
+import logging
 import os
 import sys
 
+import requests
 import yaml
 from PIL import Image
 from PIL import ImageCms
-
-import requests
-import logging
-
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
@@ -133,9 +131,38 @@ def generate_cards():
         logger.info(card_dst_png24)
 
 
+def create_size(w, h, folder_name):
+    with open(CONFIG) as f:
+        config = yaml.load(f)
+
+    root = config.get('working_dir')
+
+    src_dir = config.get('output_png24_dir')
+    dst_dir = os.path.join(root, folder_name)
+
+    os.makedirs(dst_dir, exist_ok=True)
+
+    cards_data = get_cards_data(config, local=True)
+
+    for card_data in cards_data:
+        key = card_data.get('key')
+        card_src = os.path.join(src_dir, "{}.png".format(key))
+        card_dst = os.path.join(dst_dir, "{}.png".format(key))
+
+        try:
+            im = Image.open(card_src)
+            im.thumbnail((w, h), Image.ANTIALIAS)
+            im.save(card_dst)
+            logger.info(card_dst)
+        except IOError:
+            logger.error(f"Cannot create thumbnail for {key}")
+
+
 def main(arguments):
     """Main."""
     generate_cards()
+    create_size(75, 90, "cards-75")
+    create_size(150, 180, "cards-150")
 
 
 if __name__ == '__main__':
