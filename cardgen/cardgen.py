@@ -5,6 +5,7 @@ import logging
 import os
 import sys
 
+import pngquant
 import requests
 import yaml
 from PIL import Image
@@ -158,11 +159,40 @@ def create_size(w, h, folder_name):
             logger.error(f"Cannot create thumbnail for {key}")
 
 
+def create_png8(folder_name):
+    with open(CONFIG) as f:
+        config = yaml.load(f)
+
+    root = config.get('working_dir')
+
+    src_dir = config.get('output_png24_dir')
+    dst_dir = os.path.join(root, folder_name)
+
+    os.makedirs(dst_dir, exist_ok=True)
+
+    cards_data = get_cards_data(config, local=True)
+
+    for card_data in cards_data:
+        key = card_data.get('key')
+        card_src = os.path.join(src_dir, "{}.png".format(key))
+        card_dst = os.path.join(dst_dir, "{}.png".format(key))
+
+        try:
+            pngquant.quant_image(
+                image=card_src,
+                dst=card_dst
+            )
+            logger.info(card_dst)
+        except IOError:
+            logger.error(f"Cannot create thumbnail for {key}")
+
+
 def main(arguments):
     """Main."""
     generate_cards()
     create_size(75, 90, "cards-75")
     create_size(150, 180, "cards-150")
+    create_png8("card-png-8")
 
 
 if __name__ == '__main__':
