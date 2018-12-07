@@ -75,6 +75,7 @@ def generate_cards(is_gold=False):
     rare_bg = Image.open(os.path.join(src_path, "bg-rare.png"))
     epic_bg = Image.open(os.path.join(src_path, "bg-epic.png"))
     leggie_bg = Image.open(os.path.join(src_path, "bg-legendary.png"))
+    leggie_gold_bg = Image.open(os.path.join(src_path, "bg-legendary-gold.png"))
     gold_bg = Image.open(os.path.join(src_path, "bg-gold.png"))
 
     size = card_frame.size
@@ -126,8 +127,10 @@ def generate_cards(is_gold=False):
         # use background image for regular cards
         bg = None
         if is_gold:
-            # bg = gold_bg
-            bg = commons_bg
+            if rarity == 'Legendary':
+                bg = leggie_gold_bg
+            else:
+                bg = gold_bg
         elif rarity == "Commons":
             bg = commons_bg
         elif rarity == "Rare":
@@ -219,10 +222,10 @@ def create_png8(folder_name, is_gold=False):
 def main(arguments):
     """Main."""
 
-    generate_cards(is_gold=False)
-    create_size(75, 90, "card-75", is_gold=False)
-    create_size(150, 180, "card-150", is_gold=False)
-    create_png8("card-png8", is_gold=False)
+    # generate_cards(is_gold=False)
+    # create_size(75, 90, "card-75", is_gold=False)
+    # create_size(150, 180, "card-150", is_gold=False)
+    # create_png8("card-png8", is_gold=False)
 
     generate_cards(is_gold=True)
     create_size(75, 90, "card-gold-75", is_gold=True)
