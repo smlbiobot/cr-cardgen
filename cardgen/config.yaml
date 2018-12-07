@@ -4,6 +4,8 @@ src_dir: ./src
 spells_dir: ./card-src-236x300
 output_png24_dir: ./card-png
 output_png8_dir: ./card-png8
+output_png24_gold_dir: ./card-gold-png
+output_png8_gold_dir: ./card-gold-png8
 working_dir: ./
 cards:
   ui_spells_sprite_00: sparky

@@ -34,7 +34,12 @@ def get_cards_data(config, local=False):
     return cards_data
 
 
-def generate_cards():
+def makedirs(dirs):
+    for dir in dirs:
+        os.makedirs(dir, exist_ok=True)
+
+
+def generate_cards(is_gold=False):
     """Generate Clash Royale cards."""
     with open(CONFIG) as f:
         config = yaml.load(f)
@@ -43,21 +48,34 @@ def generate_cards():
 
     src_path = config["src_dir"]
     spells_path = config["spells_dir"]
-    output_png24_dir = config["output_png24_dir"]
-    output_png8_dir = config["output_png8_dir"]
+    if is_gold:
+        output_png24_dir = config["output_png24_gold_dir"]
+        output_png8_dir = config["output_png8_gold_dir"]
+    else:
+        output_png24_dir = config["output_png24_dir"]
+        output_png8_dir = config["output_png8_dir"]
+
+    makedirs([output_png8_dir, output_png24_dir])
 
     filenames = dict((v, k) for k, v in config["cards"].items())
 
-    card_frame = Image.open(os.path.join(src_path, "frame-card.png"))
-    leggie_frame = Image.open(os.path.join(src_path, "frame-legendary.png"))
+    if is_gold:
+        card_frame = Image.open(os.path.join(src_path, "frame-card-gold.png"))
+        leggie_frame = Image.open(os.path.join(src_path, "frame-legendary-gold.png"))
+    else:
+        card_frame = Image.open(os.path.join(src_path, "frame-card.png"))
+        leggie_frame = Image.open(os.path.join(src_path, "frame-legendary.png"))
+
     card_mask = Image.open(
         os.path.join(src_path, "mask-card.png")).convert("RGBA")
     leggie_mask = Image.open(
         os.path.join(src_path, "mask-legendary.png")).convert("RGBA")
+
     commons_bg = Image.open(os.path.join(src_path, "bg-commons.png"))
     rare_bg = Image.open(os.path.join(src_path, "bg-rare.png"))
     epic_bg = Image.open(os.path.join(src_path, "bg-epic.png"))
     leggie_bg = Image.open(os.path.join(src_path, "bg-legendary.png"))
+    gold_bg = Image.open(os.path.join(src_path, "bg-gold.png"))
 
     size = card_frame.size
 
@@ -107,7 +125,10 @@ def generate_cards():
 
         # use background image for regular cards
         bg = None
-        if rarity == "Commons":
+        if is_gold:
+            # bg = gold_bg
+            bg = commons_bg
+        elif rarity == "Commons":
             bg = commons_bg
         elif rarity == "Rare":
             bg = rare_bg
@@ -132,13 +153,17 @@ def generate_cards():
         logger.info(card_dst_png24)
 
 
-def create_size(w, h, folder_name):
+def create_size(w, h, folder_name, is_gold=False):
     with open(CONFIG) as f:
         config = yaml.load(f)
 
     root = config.get('working_dir')
 
-    src_dir = config.get('output_png24_dir')
+    if is_gold:
+        src_dir = config.get('output_png24_gold_dir')
+    else:
+        src_dir = config.get('output_png24_dir')
+
     dst_dir = os.path.join(root, folder_name)
 
     os.makedirs(dst_dir, exist_ok=True)
@@ -159,13 +184,17 @@ def create_size(w, h, folder_name):
             logger.error(f"Cannot create thumbnail for {key}")
 
 
-def create_png8(folder_name):
+def create_png8(folder_name, is_gold=False):
     with open(CONFIG) as f:
         config = yaml.load(f)
 
     root = config.get('working_dir')
 
-    src_dir = config.get('output_png24_dir')
+    if is_gold:
+        src_dir = config.get('output_png24_gold_dir')
+    else:
+        src_dir = config.get('output_png24_dir')
+
     dst_dir = os.path.join(root, folder_name)
 
     os.makedirs(dst_dir, exist_ok=True)
@@ -189,10 +218,16 @@ def create_png8(folder_name):
 
 def main(arguments):
     """Main."""
-    generate_cards()
-    create_size(75, 90, "cards-75")
-    create_size(150, 180, "cards-150")
-    create_png8("card-png-8")
+
+    generate_cards(is_gold=False)
+    create_size(75, 90, "card-75", is_gold=False)
+    create_size(150, 180, "card-150", is_gold=False)
+    create_png8("card-png8", is_gold=False)
+
+    generate_cards(is_gold=True)
+    create_size(75, 90, "card-gold-75", is_gold=True)
+    create_size(150, 180, "card-gold-150", is_gold=True)
+    create_png8("card-gold-png8", is_gold=True)
 
 
 if __name__ == '__main__':
