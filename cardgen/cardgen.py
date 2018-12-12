@@ -32,21 +32,6 @@ def get_cards_data(config, local=False):
         r = requests.get(config["cards_data_url"])
         cards_data = r.json()
 
-    return cards_data
-
-
-def makedirs(dirs):
-    for dir in dirs:
-        os.makedirs(dir, exist_ok=True)
-
-
-def generate_cards(is_gold=False):
-    """Generate Clash Royale cards."""
-    with open(CONFIG) as f:
-        config = yaml.load(f)
-
-    cards_data = get_cards_data(config, local=True)
-
     # Add promo data
     cards_data.extend([
         {
@@ -70,6 +55,21 @@ def generate_cards(is_gold=False):
             "id": 26000062
         },
     ])
+
+    return cards_data
+
+
+def makedirs(dirs):
+    for dir in dirs:
+        os.makedirs(dir, exist_ok=True)
+
+
+def generate_cards(is_gold=False):
+    """Generate Clash Royale cards."""
+    with open(CONFIG) as f:
+        config = yaml.load(f)
+
+    cards_data = get_cards_data(config, local=True)
 
     src_path = config["src_dir"]
     spells_path = config["spells_dir"]
@@ -264,7 +264,19 @@ def copyfiles():
         dict(
             src='./card-150',
             dst='./cards-150'
-        )
+        ),
+        dict(
+            src='./card-gold-png',
+            dst='./cards-gold'
+        ),
+        dict(
+            src='./card-gold-75',
+            dst='./cards-75-gold'
+        ),
+        dict(
+            src='./card-gold-150',
+            dst='./cards-150-gold'
+        ),
     ]
 
     for folder in folders:
@@ -275,7 +287,7 @@ def copyfiles():
                 src_path = os.path.join(src, file)
                 dst_path = os.path.join(dst, file)
                 shutil.copy(src_path, dst_path)
-                print(dst_path)
+                logger.info(dst_path)
 
 
 def main(arguments):
