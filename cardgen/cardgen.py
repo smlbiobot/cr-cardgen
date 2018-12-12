@@ -3,6 +3,7 @@
 import json
 import logging
 import os
+import shutil
 import sys
 
 import pngquant
@@ -45,6 +46,30 @@ def generate_cards(is_gold=False):
         config = yaml.load(f)
 
     cards_data = get_cards_data(config, local=True)
+
+    # Add promo data
+    cards_data.extend([
+        {
+            "key": "shelly",
+            "name": "Shelly",
+            "elixir": 4,
+            "type": "Troop",
+            "rarity": "Epic",
+            "arena": 1,
+            "description": "He deals BIG damage up close - not so much at range. What he lacks in accuracy, he makes up for with his impressively bushy eyebrows.",
+            "id": 26000044
+        },
+        {
+            "key": "bo",
+            "name": "Bo",
+            "elixir": 4,
+            "type": "Troop",
+            "rarity": "Legendary",
+            "arena": 10,
+            "description": "Not quite a Wizard, nor an Archer - he shoots a magic arrow that passes through and damages all enemies in its path. It's not a trick, it's magic!",
+            "id": 26000062
+        },
+    ])
 
     src_path = config["src_dir"]
     spells_path = config["spells_dir"]
@@ -219,18 +244,54 @@ def create_png8(folder_name, is_gold=False):
             logger.error(f"Cannot create thumbnail for {key}")
 
 
+def copyfiles():
+    """Copy card images to cr-api-web."""
+    with open(CONFIG) as f:
+        config = yaml.load(f)
+
+    src_root = '/Users/sml/Dropbox/git/cr-cardgen/cardgen'
+    dst_root = '/Users/sml/Dropbox/git/cr-api-web/public/static/img'
+
+    folders = [
+        dict(
+            src='./card-png',
+            dst='./cards'
+        ),
+        dict(
+            src='./card-75',
+            dst='./cards-75'
+        ),
+        dict(
+            src='./card-150',
+            dst='./cards-150'
+        )
+    ]
+
+    for folder in folders:
+        src = os.path.join(src_root, folder.get('src'))
+        dst = os.path.join(dst_root, folder.get('dst'))
+        for file in os.listdir(src):
+            if not file.startswith('.'):
+                src_path = os.path.join(src, file)
+                dst_path = os.path.join(dst, file)
+                shutil.copy(src_path, dst_path)
+                print(dst_path)
+
+
 def main(arguments):
     """Main."""
 
-    # generate_cards(is_gold=False)
-    # create_size(75, 90, "card-75", is_gold=False)
-    # create_size(150, 180, "card-150", is_gold=False)
-    # create_png8("card-png8", is_gold=False)
+    generate_cards(is_gold=False)
+    create_size(75, 90, "card-75", is_gold=False)
+    create_size(150, 180, "card-150", is_gold=False)
+    create_png8("card-png8", is_gold=False)
 
     generate_cards(is_gold=True)
     create_size(75, 90, "card-gold-75", is_gold=True)
     create_size(150, 180, "card-gold-150", is_gold=True)
     create_png8("card-gold-png8", is_gold=True)
+
+    copyfiles()
 
 
 if __name__ == '__main__':
