@@ -33,28 +33,28 @@ def get_cards_data(config, local=False):
         cards_data = r.json()
 
     # Add promo data
-    cards_data.extend([
-        {
-            "key": "shelly",
-            "name": "Shelly",
-            "elixir": 4,
-            "type": "Troop",
-            "rarity": "Epic",
-            "arena": 1,
-            "description": "He deals BIG damage up close - not so much at range. What he lacks in accuracy, he makes up for with his impressively bushy eyebrows.",
-            "id": 26000044
-        },
-        {
-            "key": "bo",
-            "name": "Bo",
-            "elixir": 4,
-            "type": "Troop",
-            "rarity": "Legendary",
-            "arena": 10,
-            "description": "Not quite a Wizard, nor an Archer - he shoots a magic arrow that passes through and damages all enemies in its path. It's not a trick, it's magic!",
-            "id": 26000062
-        },
-    ])
+    # cards_data.extend([
+    #     {
+    #         "key": "shelly",
+    #         "name": "Shelly",
+    #         "elixir": 4,
+    #         "type": "Troop",
+    #         "rarity": "Epic",
+    #         "arena": 1,
+    #         "description": "He deals BIG damage up close - not so much at range. What he lacks in accuracy, he makes up for with his impressively bushy eyebrows.",
+    #         "id": 26000044
+    #     },
+    #     {
+    #         "key": "bo",
+    #         "name": "Bo",
+    #         "elixir": 4,
+    #         "type": "Troop",
+    #         "rarity": "Legendary",
+    #         "arena": 10,
+    #         "description": "Not quite a Wizard, nor an Archer - he shoots a magic arrow that passes through and damages all enemies in its path. It's not a trick, it's magic!",
+    #         "id": 26000062
+    #     },
+    # ])
 
     return cards_data
 
