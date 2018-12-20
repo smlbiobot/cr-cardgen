@@ -254,27 +254,27 @@ def copyfiles():
 
     folders = [
         dict(
-            src='./card-png',
+            src='./cards',
             dst='./cards'
         ),
         dict(
-            src='./card-75',
+            src='./cards-75',
             dst='./cards-75'
         ),
         dict(
-            src='./card-150',
+            src='./cards-150',
             dst='./cards-150'
         ),
         dict(
-            src='./card-gold-png',
+            src='./cards-gold',
             dst='./cards-gold'
         ),
         dict(
-            src='./card-gold-75',
+            src='./cards-75-gold',
             dst='./cards-75-gold'
         ),
         dict(
-            src='./card-gold-150',
+            src='./cards-150-gold',
             dst='./cards-150-gold'
         ),
     ]
@@ -294,13 +294,13 @@ def main(arguments):
     """Main."""
 
     generate_cards(is_gold=False)
-    create_size(75, 90, "card-75", is_gold=False)
-    create_size(150, 180, "card-150", is_gold=False)
-    create_png8("card-png8", is_gold=False)
+    create_size(75, 90, "cards-75", is_gold=False)
+    create_size(150, 180, "cards-150", is_gold=False)
+    create_png8("cards-png8", is_gold=False)
 
     generate_cards(is_gold=True)
-    create_size(75, 90, "card-gold-75", is_gold=True)
-    create_size(150, 180, "card-gold-150", is_gold=True)
+    create_size(75, 90, "cards-75-gold", is_gold=True)
+    create_size(150, 180, "cards-150-gold", is_gold=True)
     create_png8("card-gold-png8", is_gold=True)
 
     copyfiles()
