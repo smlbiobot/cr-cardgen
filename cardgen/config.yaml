@@ -1,4 +1,5 @@
-cards_data: ./cards.json
+#cards_data: ./cards.json
+cards_data: /Users/sml/git/cr-api-data/json/cards.json
 cards_data_url: https://royaleapi.github.io/cr-api-data/json/cards.json
 src_dir: ./src
 spells_dir: ./card-src-236x300
@@ -112,3 +113,4 @@ cards:
   goblin_giant: goblin-giant
   ui_spell_electro_dragon: electro-dragon
   ui_spell_ram_rider: ram-rider
+  ui_spell_wall_breakers: wall-breakers

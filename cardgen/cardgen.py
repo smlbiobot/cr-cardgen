@@ -249,8 +249,8 @@ def copyfiles():
     with open(CONFIG) as f:
         config = yaml.load(f)
 
-    src_root = '/Users/sml/Dropbox/git/cr-cardgen/cardgen'
-    dst_root = '/Users/sml/Dropbox/git/cr-api-web/public/static/img'
+    src_root = '/Users/sml/git/cr-cardgen/cardgen'
+    dst_root = '/Users/sml/git/cr-api-web/public/static/img'
 
     folders = [
         dict(
