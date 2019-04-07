@@ -32,30 +32,6 @@ def get_cards_data(config, local=False):
         r = requests.get(config["cards_data_url"])
         cards_data = r.json()
 
-    # Add promo data
-    # cards_data.extend([
-    #     {
-    #         "key": "shelly",
-    #         "name": "Shelly",
-    #         "elixir": 4,
-    #         "type": "Troop",
-    #         "rarity": "Epic",
-    #         "arena": 1,
-    #         "description": "He deals BIG damage up close - not so much at range. What he lacks in accuracy, he makes up for with his impressively bushy eyebrows.",
-    #         "id": 26000044
-    #     },
-    #     {
-    #         "key": "bo",
-    #         "name": "Bo",
-    #         "elixir": 4,
-    #         "type": "Troop",
-    #         "rarity": "Legendary",
-    #         "arena": 10,
-    #         "description": "Not quite a Wizard, nor an Archer - he shoots a magic arrow that passes through and damages all enemies in its path. It's not a trick, it's magic!",
-    #         "id": 26000062
-    #     },
-    # ])
-
     return cards_data
 
 
@@ -244,13 +220,13 @@ def create_png8(folder_name, is_gold=False):
             logger.error(f"Cannot create thumbnail for {key}")
 
 
-def copyfiles():
+def copyfiles(
+        src_root='/Users/sml/git/cr-cardgen/cardgen',
+        dst_root='/Users/sml/git/cr-api-web/public/static/img'
+):
     """Copy card images to cr-api-web."""
     with open(CONFIG) as f:
         config = yaml.load(f)
-
-    src_root = '/Users/sml/git/cr-cardgen/cardgen'
-    dst_root = '/Users/sml/git/cr-api-web/public/static/img'
 
     folders = [
         dict(
@@ -304,6 +280,8 @@ def main(arguments):
     create_png8("card-gold-png8", is_gold=True)
 
     copyfiles()
+
+    # copyfiles(dst_root='/Users/sml/git/cr-api-assets')
 
 
 if __name__ == '__main__':

@@ -1,8 +1,8 @@
-certifi==2018.4.16
-chardet==3.0.4
-idna==2.7
+certifi
+chardet
+idna
 Pillow
-pngquant==1.0.6
-PyYAML==3.12
-requests==2.19.1
-urllib3==1.23
+pngquant
+PyYAML
+requests
+urllib3
