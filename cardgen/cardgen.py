@@ -43,7 +43,7 @@ def makedirs(dirs):
 def generate_cards(is_gold=False):
     """Generate Clash Royale cards."""
     with open(CONFIG) as f:
-        config = yaml.load(f)
+        config = yaml.full_load(f)
 
     cards_data = get_cards_data(config, local=True)
 
@@ -159,7 +159,7 @@ def generate_cards(is_gold=False):
 
 def create_size(w, h, folder_name, is_gold=False):
     with open(CONFIG) as f:
-        config = yaml.load(f)
+        config = yaml.full_load(f)
 
     root = config.get('working_dir')
 
@@ -190,7 +190,7 @@ def create_size(w, h, folder_name, is_gold=False):
 
 def create_png8(folder_name, is_gold=False):
     with open(CONFIG) as f:
-        config = yaml.load(f)
+        config = yaml.full_load(f)
 
     root = config.get('working_dir')
 
@@ -226,7 +226,7 @@ def copyfiles(
 ):
     """Copy card images to cr-api-web."""
     with open(CONFIG) as f:
-        config = yaml.load(f)
+        config = yaml.full_load(f)
 
     folders = [
         dict(
@@ -281,7 +281,7 @@ def main(arguments):
 
     copyfiles()
 
-    # copyfiles(dst_root='/Users/sml/git/cr-api-assets')
+    copyfiles(dst_root='/Users/sml/git/cr-api-assets')
 
 
 if __name__ == '__main__':
