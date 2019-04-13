@@ -210,6 +210,10 @@ def create_png8(folder_name, is_gold=False):
         card_src = os.path.join(src_dir, "{}.png".format(key))
         card_dst = os.path.join(dst_dir, "{}.png".format(key))
 
+        if not os.path.exists(card_src):
+            print(f"{card_src} does not exist!")
+            continue
+
         try:
             pngquant.quant_image(
                 image=card_src,
