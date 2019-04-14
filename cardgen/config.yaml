@@ -67,7 +67,7 @@ cards:
   ui_spells_sprite_55: giant
   ui_spells_sprite_56: gems
   ui_spells_sprite_57: freeze
-  ui_spells_sprite_58: flying-machine
+  flying-machine: flying-machine
   ui_spells_sprite_59: furnace
   ui_spells_sprite_60: fire-spirits
   ui_spells_sprite_61: fireball
@@ -99,8 +99,8 @@ cards:
   ui_spells_sprite_87: soon
   ui_spells_sprite_88: mirror
   ui_spells_sprite_89: goblin-hut
-  ui_spells_sprite_90: tesla
-  ui_spells_sprite_91: mortar
+  tesla: tesla
+  mortar: mortar
   ui_spell_ghost: royal-ghost
   ui_spell_hunter: hunter
   ui_spell_zappies: zappies
