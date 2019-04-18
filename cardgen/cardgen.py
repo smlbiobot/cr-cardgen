@@ -224,10 +224,9 @@ def create_png8(folder_name, is_gold=False):
             logger.error(f"Cannot create thumbnail for {key}")
 
 
-def copyfiles(
-        src_root='/Users/sml/git/cr-cardgen/cardgen',
-        dst_root='/Users/sml/git/cr-api-web/public/static/img'
-):
+def copyfiles(src_root='/Users/sml/git/cr-cardgen/cardgen',
+              dst_root='/Users/sml/git/cr-api-web/public/static/img',
+              include_png8=False):
     """Copy card images to cr-api-web."""
     with open(CONFIG) as f:
         config = yaml.full_load(f)
@@ -257,7 +256,20 @@ def copyfiles(
             src='./cards-150-gold',
             dst='./cards-150-gold'
         ),
+
     ]
+
+    if include_png8:
+        folders.extend([
+            dict(
+                src='./cards-png8',
+                dst='./cards-png8'
+            ),
+            dict(
+                src='./cards-gold-png8',
+                dst='./cards-gold-png8'
+            ),
+        ])
 
     for folder in folders:
         src = os.path.join(src_root, folder.get('src'))
@@ -285,7 +297,7 @@ def main(arguments):
 
     copyfiles()
 
-    copyfiles(dst_root='/Users/sml/git/cr-api-assets')
+    copyfiles(dst_root='/Users/sml/git/cr-api-assets', include_png8=True)
 
 
 if __name__ == '__main__':

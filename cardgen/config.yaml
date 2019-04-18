@@ -98,9 +98,9 @@ cards:
   ui_spells_sprite_86: empty-2
   ui_spells_sprite_87: soon
   ui_spells_sprite_88: mirror
-  ui_spells_sprite_89: goblin-hut
   tesla: tesla
   mortar: mortar
+  goblin_hut: goblin-hut
   ui_spell_ghost: royal-ghost
   ui_spell_hunter: hunter
   ui_spell_zappies: zappies
