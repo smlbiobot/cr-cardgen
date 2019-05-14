@@ -170,16 +170,6 @@
         "id": 26000016
     },
     {
-        "key": "bu-stack",
-        "name": "BUY STACK",
-        "elixir": null,
-        "type": "Troop",
-        "rarity": "",
-        "arena": 0,
-        "description": "BUY STACK",
-        "id": 26000017
-    },
-    {
         "key": "wizard",
         "name": "Wizard",
         "elixir": 5,
@@ -187,7 +177,7 @@
         "rarity": "Rare",
         "arena": 5,
         "description": "The most awesome man to ever set foot in the Arena, the Wizard will blow you away with his handsomeness... and/or fireballs.",
-        "id": 26000018
+        "id": 26000017
     },
     {
         "key": "mini-pekka",
@@ -197,7 +187,7 @@
         "rarity": "Rare",
         "arena": 0,
         "description": "The Arena is a certified butterfly-free zone. No distractions for P.E.K.K.A, only destruction.",
-        "id": 26000019
+        "id": 26000018
     },
     {
         "key": "spear-goblins",
@@ -207,7 +197,7 @@
         "rarity": "Common",
         "arena": 1,
         "description": "Three unarmored ranged attackers. Who the heck taught these guys to throw spears!? Who thought that was a good idea?!",
-        "id": 26000020
+        "id": 26000019
     },
     {
         "key": "giant-skeleton",
@@ -217,7 +207,7 @@
         "rarity": "Epic",
         "arena": 2,
         "description": "The bigger the skeleton, the bigger the bomb. Carries a bomb that blows up when the Giant Skeleton dies.",
-        "id": 26000021
+        "id": 26000020
     },
     {
         "key": "hog-rider",
@@ -227,7 +217,7 @@
         "rarity": "Rare",
         "arena": 1,
         "description": "Fast melee troop that targets buildings and can jump over the river. He followed the echoing call of \"Hog Riderrrrr\" all the way through the Arena doors.",
-        "id": 26000022
+        "id": 26000021
     },
     {
         "key": "minion-horde",
@@ -237,7 +227,7 @@
         "rarity": "Common",
         "arena": 4,
         "description": "Six fast, unarmored flying attackers. Three's a crowd, six is a horde!",
-        "id": 26000023
+        "id": 26000022
     },
     {
         "key": "ice-wizard",
@@ -247,7 +237,7 @@
         "rarity": "Legendary",
         "arena": 8,
         "description": "This chill caster throws ice shards that slow down enemies' movement and attack speed. Despite being freezing cold, he has a handlebar mustache that's too hot for TV.",
-        "id": 26000024
+        "id": 26000023
     },
     {
         "key": "royal-giant",
@@ -257,7 +247,7 @@
         "rarity": "Common",
         "arena": 7,
         "description": "Destroying enemy buildings with his massive cannon is his job; making a raggedy blond beard look good is his passion.",
-        "id": 26000025
+        "id": 26000024
     },
     {
         "key": "guards",
@@ -267,7 +257,7 @@
         "rarity": "Epic",
         "arena": 7,
         "description": "Three ruthless bone brothers with shields. Knock off their shields and all that's left are three ruthless bone brothers.",
-        "id": 26000026
+        "id": 26000025
     },
     {
         "key": "princess",
@@ -277,7 +267,7 @@
         "rarity": "Legendary",
         "arena": 7,
         "description": "This stunning Princess shoots flaming arrows from long range. If you're feeling warm feelings towards her, it's probably because you're on fire.",
-        "id": 26000027
+        "id": 26000026
     },
     {
         "key": "dark-prince",
@@ -287,17 +277,17 @@
         "rarity": "Epic",
         "arena": 7,
         "description": "The Dark Prince deals area damage and lets his spiked club do the talking for him - because when he does talk, it sounds like he has a bucket on his head.",
-        "id": 26000028
+        "id": 26000027
     },
     {
         "key": "three-musketeers",
         "name": "Three Musketeers",
-        "elixir": 10,
+        "elixir": 9,
         "type": "Troop",
         "rarity": "Rare",
         "arena": 7,
         "description": "Trio of powerful, independent markswomen, fighting for justice and honor. Disrespecting them would not be just a mistake, it would be a cardinal sin!",
-        "id": 26000029
+        "id": 26000028
     },
     {
         "key": "lava-hound",
@@ -307,7 +297,7 @@
         "rarity": "Legendary",
         "arena": 4,
         "description": "The Lava Hound is a majestic flying beast that attacks buildings. The Lava Pups are less majestic angry babies that attack anything.",
-        "id": 26000030
+        "id": 26000029
     },
     {
         "key": "ice-spirit",
@@ -317,7 +307,7 @@
         "rarity": "Common",
         "arena": 8,
         "description": "Spawns one lively little Ice Spirit to freeze a group of enemies. Stay frosty.",
-        "id": 26000031
+        "id": 26000030
     },
     {
         "key": "fire-spirits",
@@ -327,7 +317,7 @@
         "rarity": "Common",
         "arena": 5,
         "description": "These three Fire Spirits are on a kamikaze mission to give you a warm hug. It'd be adorable if they weren't on fire.",
-        "id": 26000032
+        "id": 26000031
     },
     {
         "key": "miner",
@@ -337,7 +327,7 @@
         "rarity": "Legendary",
         "arena": 4,
         "description": "The Miner can burrow his way underground and appear anywhere in the Arena. It's not magic, it's a shovel.",
-        "id": 26000033
+        "id": 26000032
     },
     {
         "key": "sparky",
@@ -347,7 +337,7 @@
         "rarity": "Legendary",
         "arena": 11,
         "description": "Sparky slowly charges up, then unloads MASSIVE area damage. Overkill isn't in her vocabulary.",
-        "id": 26000034
+        "id": 26000033
     },
     {
         "key": "bowler",
@@ -357,7 +347,7 @@
         "rarity": "Epic",
         "arena": 8,
         "description": "This big blue dude digs the simple things in life - Dark Elixir drinks and throwing rocks. His massive boulders roll through their target, hitting everything behind for a strike!",
-        "id": 26000035
+        "id": 26000034
     },
     {
         "key": "lumberjack",
@@ -367,7 +357,7 @@
         "rarity": "Legendary",
         "arena": 8,
         "description": "He chops trees by day and hunts The Log by night. His bottle of Rage spills everywhere when he's defeated.",
-        "id": 26000036
+        "id": 26000035
     },
     {
         "key": "battle-ram",
@@ -377,7 +367,7 @@
         "rarity": "Rare",
         "arena": 3,
         "description": "Two Barbarians holding a big log charge at the nearest building, dealing significant damage if they connect; then they go to town with their swords!",
-        "id": 26000037
+        "id": 26000036
     },
     {
         "key": "inferno-dragon",
@@ -387,7 +377,7 @@
         "rarity": "Legendary",
         "arena": 6,
         "description": "Shoots a focused beam of fire that increases in damage over time. Wears a helmet because flying can be dangerous.",
-        "id": 26000038
+        "id": 26000037
     },
     {
         "key": "ice-golem",
@@ -397,7 +387,7 @@
         "rarity": "Rare",
         "arena": 8,
         "description": "He's tough, targets buildings and explodes when destroyed, slowing nearby enemies. Made entirely out of ice... or is he?! Yes.",
-        "id": 26000039
+        "id": 26000038
     },
     {
         "key": "mega-minion",
@@ -407,7 +397,7 @@
         "rarity": "Rare",
         "arena": 4,
         "description": "Flying, armored and powerful. What could be its weakness?! Cupcakes.",
-        "id": 26000040
+        "id": 26000039
     },
     {
         "key": "dart-goblin",
@@ -417,7 +407,7 @@
         "rarity": "Rare",
         "arena": 9,
         "description": "Runs fast, shoots far and chews gum. How does he blow darts with a mouthful of Double Trouble Gum? Years of didgeridoo lessons.",
-        "id": 26000041
+        "id": 26000040
     },
     {
         "key": "goblin-gang",
@@ -427,7 +417,7 @@
         "rarity": "Common",
         "arena": 9,
         "description": "Spawns five Goblins - three with knives, two with spears - at a discounted Elixir cost. It's like a Goblin Value Pack!",
-        "id": 26000042
+        "id": 26000041
     },
     {
         "key": "electro-wizard",
@@ -437,7 +427,7 @@
         "rarity": "Legendary",
         "arena": 11,
         "description": "He lands with a \"POW!\", stuns nearby enemies and shoots lightning with both hands! What a show off.",
-        "id": 26000043
+        "id": 26000042
     },
     {
         "key": "elite-barbarians",
@@ -447,7 +437,7 @@
         "rarity": "Common",
         "arena": 10,
         "description": "Spawns a pair of leveled up Barbarians. They're like regular Barbarians, only harder, better, faster and stronger.",
-        "id": 26000044
+        "id": 26000043
     },
     {
         "key": "hunter",
@@ -457,7 +447,7 @@
         "rarity": "Epic",
         "arena": 1,
         "description": "He deals BIG damage up close - not so much at range. What he lacks in accuracy, he makes up for with his impressively bushy eyebrows.",
-        "id": 26000045
+        "id": 26000044
     },
     {
         "key": "executioner",
@@ -467,7 +457,7 @@
         "rarity": "Epic",
         "arena": 12,
         "description": "He throws his axe like a boomerang, striking all enemies on the way out AND back. It's a miracle he doesn't lose an arm.",
-        "id": 26000046
+        "id": 26000045
     },
     {
         "key": "bandit",
@@ -477,7 +467,7 @@
         "rarity": "Legendary",
         "arena": 9,
         "description": "The Bandit dashes to her target and delivers an extra big hit! While dashing, she can't be touched. The mask keeps her identity safe, and gives her bonus cool points!",
-        "id": 26000047
+        "id": 26000046
     },
     {
         "key": "royal-recruits",
@@ -487,7 +477,7 @@
         "rarity": "Common",
         "arena": 7,
         "description": "Deploys a line of recruits armed with spears, shields and wooden buckets. They dream of ponies and one day wearing metal buckets.",
-        "id": 26000048
+        "id": 26000047
     },
     {
         "key": "night-witch",
@@ -497,7 +487,7 @@
         "rarity": "Legendary",
         "arena": 5,
         "description": "Summons Bats to do her bidding, even after death! If you get too close, she isn't afraid of pitching in with her mean-looking battle staff.",
-        "id": 26000049
+        "id": 26000048
     },
     {
         "key": "bats",
@@ -507,7 +497,7 @@
         "rarity": "Common",
         "arena": 5,
         "description": "Spawns a handful of tiny flying creatures. Think of them as sweet, purple... balls of DESTRUCTION!",
-        "id": 26000050
+        "id": 26000049
     },
     {
         "key": "royal-ghost",
@@ -517,7 +507,7 @@
         "rarity": "Legendary",
         "arena": 12,
         "description": "He drifts invisibly through the Arena until he's startled by an enemy... then he attacks! Then he's invisible again! Zzzz.",
-        "id": 26000051
+        "id": 26000050
     },
     {
         "key": "ram-rider",
@@ -527,7 +517,7 @@
         "rarity": "Legendary",
         "arena": 10,
         "description": "Together they charge through the Arena; snaring enemies, knocking down towers ... and chewing grass!?",
-        "id": 26000052
+        "id": 26000051
     },
     {
         "key": "zappies",
@@ -537,7 +527,7 @@
         "rarity": "Rare",
         "arena": 11,
         "description": "Spawns a pack of miniature Zap machines. Who controls them...? Only the Master Builder knows.",
-        "id": 26000053
+        "id": 26000052
     },
     {
         "key": "rascals",
@@ -547,7 +537,7 @@
         "rarity": "Common",
         "arena": 9,
         "description": "Spawns a mischievous trio of Rascals! The boy takes the lead, while the girls pelt enemies from behind... with slingshots full of Double Trouble Gum!",
-        "id": 26000054
+        "id": 26000053
     },
     {
         "key": "cannon-cart",
@@ -557,7 +547,7 @@
         "rarity": "Epic",
         "arena": 10,
         "description": "A Cannon on wheels?! Bet they won't see that coming! Once you break its shield, it becomes a Cannon not on wheels.",
-        "id": 26000055
+        "id": 26000054
     },
     {
         "key": "mega-knight",
@@ -567,7 +557,7 @@
         "rarity": "Legendary",
         "arena": 7,
         "description": "He lands with the force of 1,000 mustaches, then jumps from one foe to the next dealing huge area damage. Stand aside!",
-        "id": 26000056
+        "id": 26000055
     },
     {
         "key": "skeleton-barrel",
@@ -577,7 +567,7 @@
         "rarity": "Common",
         "arena": 6,
         "description": "It's a Skeleton party in the sky, until all the balloons pop... then it's a Skeleton party on the ground!",
-        "id": 26000057
+        "id": 26000056
     },
     {
         "key": "flying-machine",
@@ -587,7 +577,7 @@
         "rarity": "Rare",
         "arena": 6,
         "description": "The Master Builder has sent his first contraption to the Arena! It's a fast and fun flying machine, but fragile!",
-        "id": 26000058
+        "id": 26000057
     },
     {
         "key": "wall-breakers",
@@ -597,7 +587,7 @@
         "rarity": "Epic",
         "arena": 0,
         "description": "A daring duo of dangerous dive bombers. Nothing warms a Wall Breaker's cold and undead heart like blowing up buildings.",
-        "id": 26000059
+        "id": 26000058
     },
     {
         "key": "royal-hogs",
@@ -607,7 +597,7 @@
         "rarity": "Rare",
         "arena": 10,
         "description": "The King's personal pets are loose! They love to chomp on apples and towers alike - who let the hogs out?!",
-        "id": 26000060
+        "id": 26000059
     },
     {
         "key": "goblin-giant",
@@ -617,7 +607,7 @@
         "rarity": "Epic",
         "arena": 9,
         "description": "This jolly green Goblin Giant stomps towards enemy buildings. He carries two Spear Goblins everywhere he goes. It's a weird but functional arrangement.",
-        "id": 26000061
+        "id": 26000060
     },
     {
         "key": "magic-archer",
@@ -627,7 +617,7 @@
         "rarity": "Legendary",
         "arena": 5,
         "description": "Not quite a Wizard, nor an Archer - he shoots a magic arrow that passes through and damages all enemies in its path. It's not a trick, it's magic!",
-        "id": 26000063
+        "id": 26000062
     },
     {
         "key": "electro-dragon",
@@ -637,7 +627,7 @@
         "rarity": "Epic",
         "arena": 11,
         "description": "Spits out bolts of electricity hitting up to three targets. Suffers from middle child syndrome to boot.",
-        "id": 26000064
+        "id": 26000063
     },
     {
         "key": "cannon",
@@ -748,6 +738,16 @@
         "arena": 5,
         "description": "The Furnace spawns two Fire Spirits at a time. It also makes great brick-oven pancakes.",
         "id": 27000010
+    },
+    {
+        "key": "goblin-cage",
+        "name": "Goblin Cage",
+        "elixir": 4,
+        "type": "Building",
+        "rarity": "Rare",
+        "arena": 12,
+        "description": "When the Goblin Cage is destroyed, a Goblin Brawler is unleashed into the Arena! Goblin Brawler never skips leg day.",
+        "id": 27000012
     },
     {
         "key": "fireball",

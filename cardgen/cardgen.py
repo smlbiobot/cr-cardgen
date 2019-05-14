@@ -281,9 +281,16 @@ def copyfiles(src_root='/Users/sml/git/cr-cardgen/cardgen',
                 shutil.copy(src_path, dst_path)
                 logger.info(dst_path)
 
+def copy_cards_json():
+    shutil.copy(
+        '/Users/sml/git/cr-api-data/json/cards.json',
+        '/Users/sml/git/cr-cardgen/cardgen/cards.json'
+    )
 
 def main(arguments):
     """Main."""
+
+    copy_cards_json()
 
     generate_cards(is_gold=False)
     create_size(75, 90, "cards-75", is_gold=False)
