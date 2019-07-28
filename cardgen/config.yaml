@@ -8,6 +8,7 @@ output_png8_dir: ./cards-png8
 output_png24_gold_dir: ./cards-gold
 output_png8_gold_dir: ./cards-gold-png8
 working_dir: ./
+raw_dir: ./cards-raw
 cards:
   ui_spells_sprite_00: sparky
   ui_spells_sprite_01: zap
