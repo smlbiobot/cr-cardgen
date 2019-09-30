@@ -17,6 +17,8 @@ logging.basicConfig(level=logging.INFO)
 
 CONFIG = os.path.join("config.yaml")
 
+pngquant.config('/usr/local/bin/pngquant')
+
 
 def load_json(filename):
     """Load json by filename."""
