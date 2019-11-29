@@ -84,7 +84,7 @@
         "type": "Troop",
         "rarity": "Epic",
         "arena": 2,
-        "description": "Summons Skeletons, shoots destructo beams, has glowing pink eyes that unfortunately don't shoot lasers. Spawns 3 Skeletons when destroyed.",
+        "description": "Summons Skeletons, shoots destructo beams, has glowing pink eyes that unfortunately don't shoot lasers.",
         "id": 26000007
     },
     {
@@ -641,7 +641,7 @@
         "key": "wall-breakers",
         "name": "Wall Breakers",
         "sc_key": "Wallbreakers",
-        "elixir": 3,
+        "elixir": 2,
         "type": "Troop",
         "rarity": "Epic",
         "arena": 0,
@@ -655,7 +655,7 @@
         "elixir": 5,
         "type": "Troop",
         "rarity": "Rare",
-        "arena": 10,
+        "arena": 7,
         "description": "The King's personal pets are loose! They love to chomp on apples and towers alike - who let the hogs out?!",
         "id": 26000059
     },
@@ -710,9 +710,20 @@
         "elixir": 3,
         "type": "Troop",
         "rarity": "Rare",
-        "arena": 12,
+        "arena": 11,
         "description": "Splits into two Elixir Golemites when destroyed, which split into two sentient Blobs when defeated. A Blob gives your opponent 1 Elixir when destroyed!",
         "id": 26000067
+    },
+    {
+        "key": "battle-healer",
+        "name": "Battle Healer",
+        "sc_key": "BattleHealer",
+        "elixir": 4,
+        "type": "Troop",
+        "rarity": "Rare",
+        "arena": 12,
+        "description": "With each attack, she unleashes a powerful healing aura that restores Hitpoints to friendly Troops. Outside of combat she passively heals herself!",
+        "id": 26000068
     },
     {
         "key": "cannon",
@@ -1029,7 +1040,7 @@
         "elixir": 1,
         "type": "Spell",
         "rarity": "Rare",
-        "arena": 7,
+        "arena": 10,
         "description": "Heal your troops to keep them in the fight! Friendly troops are healed over time while in the target area. Doesn't affect buildings.",
         "id": 28000016
     },
