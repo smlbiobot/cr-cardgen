@@ -304,7 +304,10 @@ def main(arguments):
     create_size(150, 180, "cards-150-gold", is_gold=True)
     create_png8("card-gold-png8", is_gold=True)
 
-    copyfiles()
+    copyfiles(
+        src_root='/Users/sml/git/cr-cardgen/cardgen',
+        dst_root='/Users/sml/git/cr-api-web/public/static/img'
+    )
 
     copyfiles(dst_root='/Users/sml/git/cr-api-assets', include_png8=True)
 
