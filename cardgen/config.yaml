@@ -1,5 +1,5 @@
 #cards_data: ./cards.json
-cards_data: /Users/sml/git/cr-api-data/json/cards.json
+cards_data: /Users/sml/git/cr-api-data/docs/json/cards.json
 cards_data_url: https://royaleapi.github.io/cr-api-data/json/cards.json
 src_dir: ./src
 spells_dir: ./card-src-236x300
@@ -124,3 +124,5 @@ cards:
   royal_delivery_card_image: royal-delivery
   ui_spell_heal_spirit: heal-spirit
   ui_spell_skeleton_dragon: skeleton-dragons
+  ui_spell_electro_giant: electro-giant
+  ui_spell_electro_spirit: electro-spirit

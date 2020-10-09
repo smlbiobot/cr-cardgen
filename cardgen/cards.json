@@ -190,7 +190,7 @@
         "key": "wizard",
         "name": "Wizard",
         "sc_key": "Wizard",
-        "elixir": 4,
+        "elixir": 5,
         "type": "Troop",
         "rarity": "Rare",
         "arena": 5,
@@ -738,14 +738,36 @@
     },
     {
         "key": "skeleton-dragons",
-        "name": "Skeleton Dragons*",
+        "name": "Skeleton Dragons",
         "sc_key": "SkeletonDragons",
         "elixir": 4,
         "type": "Troop",
         "rarity": "Common",
-        "arena": 10,
-        "description": "A pair of former Dragons that deal splash damage. They are fragile!*",
+        "arena": 12,
+        "description": "This pair of skeletal scorchers deal Area Damage and fly above the Arena. They also play a mean rib cage xylophone duet.",
         "id": 26000080
+    },
+    {
+        "key": "electro-spirit",
+        "name": "Electro Spirit",
+        "sc_key": "ElectroSpirit",
+        "elixir": 1,
+        "type": "Troop",
+        "rarity": "Common",
+        "arena": 10,
+        "description": "Jumps on enemies, dealing Area Damage and stunning up to 9 enemy Troops. Locked in an eternal battle with Knight for the best mustache.",
+        "id": 26000084
+    },
+    {
+        "key": "electro-giant",
+        "name": "Electro Giant",
+        "sc_key": "ElectroGiant",
+        "elixir": 8,
+        "type": "Troop",
+        "rarity": "Epic",
+        "arena": 10,
+        "description": "He channels electricity through his Zap Pack, a unique device that stuns and damages any Troop attacking him within its range.\n\nDon't tell him that his finger guns aren't real! He'll zap you.",
+        "id": 26000085
     },
     {
         "key": "cannon",
@@ -1063,7 +1085,7 @@
         "type": "Spell",
         "rarity": "Rare",
         "arena": 10,
-        "description": "A mischievous Spirit that leaps at enemies, dealing Damage and leaving behind a powerful healing effect that restores Hitpoints to friendly Troops! R.I.P. Heal\\n2017 – 2020\\nAlas, we hardly used ye.",
+        "description": "A mischievous Spirit that leaps at enemies, dealing Damage and leaving behind a powerful healing effect that restores Hitpoints to friendly Troops!\n\nR.I.P. Heal\n2017 – 2020\nAlas, we hardly used ye.",
         "id": 28000016
     },
     {
@@ -1085,7 +1107,7 @@
         "type": "Spell",
         "rarity": "Common",
         "arena": 12,
-        "description": "No need to sign for this package! Dropped from the sky, it damages and knocks back enemy Troops before delivering a Royal Recruit. The empty box is also handy for espionage.",
+        "description": "No need to sign for this package!\n\nDropped from the sky, it deals Area Damage to enemy Troops before delivering a Royal Recruit.\n\nThe empty box is also handy for espionage.",
         "id": 28000018
     }
 ]
