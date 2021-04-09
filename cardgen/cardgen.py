@@ -42,7 +42,7 @@ def makedirs(dirs):
         os.makedirs(dir, exist_ok=True)
 
 
-def generate_cards(is_gold=False):
+def generate_cards(is_gold=False, with_elixir=False):
     """Generate Clash Royale cards."""
     with open(CONFIG) as f:
         config = yaml.full_load(f)
@@ -55,8 +55,12 @@ def generate_cards(is_gold=False):
         output_png24_dir = config["output_png24_gold_dir"]
         output_png8_dir = config["output_png8_gold_dir"]
     else:
-        output_png24_dir = config["output_png24_dir"]
-        output_png8_dir = config["output_png8_dir"]
+        if with_elixir:
+            output_png24_dir = config["output_png24_elixir_dir"]
+            output_png8_dir = config["output_png8_elixir_dir"]
+        else:
+            output_png24_dir = config["output_png24_dir"]
+            output_png8_dir = config["output_png8_dir"]
 
     makedirs([output_png8_dir, output_png24_dir])
 
@@ -86,6 +90,7 @@ def generate_cards(is_gold=False):
     for card_data in cards_data:
         name = card_data['key']
         rarity = card_data['rarity']
+        elixir = card_data['elixir']
 
         filename = filenames.get(name)
 
@@ -151,6 +156,11 @@ def generate_cards(is_gold=False):
             im = Image.alpha_composite(im, leggie_frame)
         else:
             im = Image.alpha_composite(im, card_frame)
+
+        # add elixir
+        if with_elixir:
+            im_elixir = Image.open(os.path.join(src_path, f"elixir-{elixir}.png"))
+            im = Image.alpha_composite(im, im_elixir)
 
         # save and output path to std out
 
@@ -293,6 +303,8 @@ def main(arguments):
     """Main."""
 
     copy_cards_json()
+
+    generate_cards(is_gold=False, with_elixir=True)
 
     generate_cards(is_gold=False)
     create_size(75, 90, "cards-75", is_gold=False)

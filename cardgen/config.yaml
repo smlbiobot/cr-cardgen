@@ -7,6 +7,8 @@ output_png24_dir: ./cards
 output_png8_dir: ./cards-png8
 output_png24_gold_dir: ./cards-gold
 output_png8_gold_dir: ./cards-gold-png8
+output_png24_elixir_dir: ./cards-elixir
+output_png8_elixir_dir: ./cards-elixir-png8
 working_dir: ./
 raw_dir: ./cards-raw
 cards:
@@ -126,3 +128,4 @@ cards:
   ui_spell_skeleton_dragon: skeleton-dragons
   ui_spell_electro_giant: electro-giant
   ui_spell_electro_spirit: electro-spirit
+  ui_spell_mother_witch: mother-witch
