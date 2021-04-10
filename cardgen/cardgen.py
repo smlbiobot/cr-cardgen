@@ -169,7 +169,7 @@ def generate_cards(is_gold=False, with_elixir=False):
         logger.info(card_dst_png24)
 
 
-def create_size(w, h, folder_name, is_gold=False):
+def create_size(w, h, folder_name, is_gold=False, with_elixir=False):
     with open(CONFIG) as f:
         config = yaml.full_load(f)
 
@@ -178,7 +178,10 @@ def create_size(w, h, folder_name, is_gold=False):
     if is_gold:
         src_dir = config.get('output_png24_gold_dir')
     else:
-        src_dir = config.get('output_png24_dir')
+        if with_elixir:
+            src_dir = config["output_png24_elixir_dir"]
+        else:
+            src_dir = config["output_png24_dir"]
 
     dst_dir = os.path.join(root, folder_name)
 
@@ -293,11 +296,13 @@ def copyfiles(src_root='/Users/sml/git/cr-cardgen/cardgen',
                 shutil.copy(src_path, dst_path)
                 logger.info(dst_path)
 
+
 def copy_cards_json():
     shutil.copy(
         '/Users/sml/git/cr-api-data/docs/json/cards.json',
         '/Users/sml/git/cr-cardgen/cardgen/cards.json'
     )
+
 
 def main(arguments):
     """Main."""
@@ -305,6 +310,8 @@ def main(arguments):
     copy_cards_json()
 
     generate_cards(is_gold=False, with_elixir=True)
+    create_size(75, 90, "cards-elixir-75", is_gold=False, with_elixir=True)
+    create_size(150, 180, "cards-elixir-150", is_gold=False, with_elixir=True)
 
     generate_cards(is_gold=False)
     create_size(75, 90, "cards-75", is_gold=False)
