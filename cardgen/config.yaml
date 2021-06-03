@@ -72,7 +72,7 @@ cards:
   ui_spells_sprite_57: freeze
   flying-machine: flying-machine
   ui_spells_sprite_59: furnace
-  ui_spells_sprite_60: fire-spirits
+  ui_spells_sprite_60: fire-spirit
   ui_spells_sprite_61: fireball
   ui_spells_sprite_62: executioner
   ui_spells_sprite_63: electro-wizard
@@ -129,3 +129,4 @@ cards:
   ui_spell_electro_giant: electro-giant
   ui_spell_electro_spirit: electro-spirit
   ui_spell_mother_witch: mother-witch
+  ui_spell_goblin_drill: goblin-drill
