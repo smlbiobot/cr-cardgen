@@ -11,6 +11,7 @@ import requests
 import yaml
 from PIL import Image
 from PIL import ImageCms
+from PIL import ImageChops
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
@@ -69,14 +70,18 @@ def generate_cards(is_gold=False, with_elixir=False):
     if is_gold:
         card_frame = Image.open(os.path.join(src_path, "frame-card-gold.png"))
         leggie_frame = Image.open(os.path.join(src_path, "frame-legendary-gold.png"))
+        champion_frame = Image.open(os.path.join(src_path, "frame-champion.png"))
     else:
         card_frame = Image.open(os.path.join(src_path, "frame-card.png"))
         leggie_frame = Image.open(os.path.join(src_path, "frame-legendary.png"))
+        champion_frame = Image.open(os.path.join(src_path, "frame-champion.png"))
 
     card_mask = Image.open(
         os.path.join(src_path, "mask-card.png")).convert("RGBA")
     leggie_mask = Image.open(
         os.path.join(src_path, "mask-legendary.png")).convert("RGBA")
+    champion_mask = Image.open(
+        os.path.join(src_path, "mask-champion.png")).convert("RGBA")
 
     commons_bg = Image.open(os.path.join(src_path, "bg-commons.png"))
     rare_bg = Image.open(os.path.join(src_path, "bg-rare.png"))
@@ -84,6 +89,7 @@ def generate_cards(is_gold=False, with_elixir=False):
     leggie_bg = Image.open(os.path.join(src_path, "bg-legendary.png"))
     leggie_gold_bg = Image.open(os.path.join(src_path, "bg-legendary-gold.png"))
     gold_bg = Image.open(os.path.join(src_path, "bg-gold.png"))
+    champion_bg = Image.open(os.path.join(src_path, "bg-champion.png"))
 
     size = card_frame.size
 
@@ -91,6 +97,10 @@ def generate_cards(is_gold=False, with_elixir=False):
         name = card_data['key']
         rarity = card_data['rarity']
         elixir = card_data['elixir']
+
+        # debug: skip everything but champion
+        # if rarity != "Champion":
+        #     continue
 
         filename = filenames.get(name)
 
@@ -124,6 +134,28 @@ def generate_cards(is_gold=False, with_elixir=False):
 
         if rarity == "Legendary":
             im.paste(card_image, mask=leggie_mask)
+        elif rarity == "Champion":
+            # scale up image slightly and then crop to same dimension
+            c_image = card_image
+            orig_size = c_image.size
+            old_w = orig_size[0]
+            old_h = orig_size[1]
+            scale = 1.1
+            new_w = int(old_w * scale)
+            new_h = int(old_h * scale)
+            c_image = c_image.resize(
+                (new_w, new_h)
+            )
+            crop_x = int((new_w - old_w) / 2)
+            crop_y = int((new_h - old_w) / 2)
+            crop_right = crop_x + old_w
+            crop_bottom = crop_y + old_h
+
+            c_image = c_image.crop(
+                (crop_x, crop_y, crop_right, crop_bottom)
+            )
+            c_image = ImageChops.offset(c_image, 0, 50)
+            im.paste(c_image, mask=champion_mask)
         else:
             im.paste(card_image, mask=card_mask)
 
@@ -134,7 +166,9 @@ def generate_cards(is_gold=False, with_elixir=False):
 
         # use background image for regular cards
         bg = None
-        if is_gold:
+        if rarity == "Champion":
+            bg = champion_bg
+        elif is_gold:
             if rarity == 'Legendary':
                 bg = leggie_gold_bg
             else:
@@ -154,6 +188,8 @@ def generate_cards(is_gold=False, with_elixir=False):
         im = Image.alpha_composite(bg, im)
         if rarity == "Legendary":
             im = Image.alpha_composite(im, leggie_frame)
+        elif rarity == "Champion":
+            im = Image.alpha_composite(im, champion_frame)
         else:
             im = Image.alpha_composite(im, card_frame)
 
@@ -309,7 +345,11 @@ def main(arguments):
 
     copy_cards_json()
 
-    generate_cards(is_gold=False, with_elixir=True)
+    for with_elixir in [True, False]:
+        generate_cards(is_gold=False, with_elixir=with_elixir)
+
+    # return
+
     create_size(75, 90, "cards-elixir-75", is_gold=False, with_elixir=True)
     create_size(150, 180, "cards-elixir-150", is_gold=False, with_elixir=True)
 
