@@ -334,8 +334,13 @@ def copyfiles(src_root='/Users/sml/git/cr-cardgen/cardgen',
 
 
 def copy_cards_json():
+    # shutil.copy(
+    #     '/Users/sml/git/cr-api-data/docs/json/cards.json',
+    #     '/Users/sml/git/cr-cardgen/cardgen/cards.json'
+    # )
+
     shutil.copy(
-        '/Users/sml/git/cr-api-data/docs/json/cards.json',
+        '/Users/sml/git/cr-api-data-process/docs/json/cards.json',
         '/Users/sml/git/cr-cardgen/cardgen/cards.json'
     )
 

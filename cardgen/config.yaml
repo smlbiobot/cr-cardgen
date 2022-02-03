@@ -1,5 +1,5 @@
 #cards_data: ./cards.json
-cards_data: /Users/sml/git/cr-api-data/docs/json/cards.json
+cards_data: /Users/sml/git/cr-api-data-process/docs/json/cards.json
 cards_data_url: https://royaleapi.github.io/cr-api-data/json/cards.json
 src_dir: ./src
 spells_dir: ./card-src-236x300
@@ -133,3 +133,4 @@ cards:
   ui_spell_skeleton_king: skeleton-king
   ui_spell_archer_queen: archer-queen
   ui_spell_golden_knight: golden-knight
+  ui_spell_super_lava_hound: super-lava-hound

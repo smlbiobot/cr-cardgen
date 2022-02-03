@@ -748,6 +748,17 @@
         "id": 26000069
     },
     {
+        "key": "super-lava-hound",
+        "name": "Super Lava Hound",
+        "sc_key": "SuperLavaHound",
+        "elixir": 8,
+        "type": "Troop",
+        "rarity": "Legendary",
+        "arena": 10,
+        "description": "The Lava Hound is a majestic flying beast that attacks buildings. The Lava Pups are less majestic angry babies that attack anything.",
+        "id": 26000070
+    },
+    {
         "key": "archer-queen",
         "name": "Archer Queen",
         "sc_key": "ArcherQueen",
