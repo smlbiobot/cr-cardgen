@@ -715,6 +715,17 @@
         "id": 26000064
     },
     {
+        "key": "mighty-miner",
+        "name": "Mighty Miner",
+        "sc_key": "MightyMiner",
+        "elixir": 4,
+        "type": "Troop",
+        "rarity": "Champion",
+        "arena": 2,
+        "description": "Walk softly... and carry a big drill!\n\nThis Champion deals increasing Damage to his target and can switch lanes to escape combat or change attack plans.\n\nThis makes him not only the mightiest, but also the sneakiest Miner in the Arena.",
+        "id": 26000065
+    },
+    {
         "key": "elixir-golem",
         "name": "Elixir Golem",
         "sc_key": "ElixirGolem",
@@ -746,17 +757,6 @@
         "arena": 0,
         "description": "The King of the undead himself. He sometimes feels lonely (could be due to his non flattering features) and will summon friends to join him in the battle even after death. Tough guys have feelings too!",
         "id": 26000069
-    },
-    {
-        "key": "super-lava-hound",
-        "name": "Super Lava Hound",
-        "sc_key": "SuperLavaHound",
-        "elixir": 8,
-        "type": "Troop",
-        "rarity": "Legendary",
-        "arena": 10,
-        "description": "The Lava Hound is a majestic flying beast that attacks buildings. The Lava Pups are less majestic angry babies that attack anything.",
-        "id": 26000070
     },
     {
         "key": "archer-queen",
@@ -817,7 +817,7 @@
         "key": "electro-giant",
         "name": "Electro Giant",
         "sc_key": "ElectroGiant",
-        "elixir": 8,
+        "elixir": 7,
         "type": "Troop",
         "rarity": "Epic",
         "arena": 11,
