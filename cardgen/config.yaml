@@ -15,7 +15,7 @@ cards:
   ui_spells_sprite_00: sparky
   ui_spells_sprite_01: zap
   ui_spells_sprite_02: wizard
-  ui_spells_sprite_03: valkyrie
+  ui_spells_valkyrie-0: valkyrie
   ui_spells_sprite_04: tornado
   ui_spells_sprite_05: tombstone
   ui_spells_sprite_06: three-musketeers
