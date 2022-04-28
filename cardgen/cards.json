@@ -726,6 +726,17 @@
         "id": 26000065
     },
     {
+        "key": "super-witch",
+        "name": "Super Witch",
+        "sc_key": "SuperWitch",
+        "elixir": 6,
+        "type": "Troop",
+        "rarity": "Legendary",
+        "arena": 5,
+        "description": "Summons Skeletons, shoots destructo beams, has glowing pink eyes that unfortunately don't shoot lasers.",
+        "id": 26000066
+    },
+    {
         "key": "elixir-golem",
         "name": "Elixir Golem",
         "sc_key": "ElixirGolem",
