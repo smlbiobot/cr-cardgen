@@ -66,7 +66,7 @@ cards:
   ui_spells_sprite_51: goblin-gang
   ui_spells_sprite_52: goblin-barrel
   ui_spells_sprite_53: spear-goblins
-  ui_spells_sprite_54: giant-skeleton
+  ui_spell_giant_skeleton: giant-skeleton
   ui_spells_sprite_55: giant
   ui_spells_sprite_56: gems
   ui_spells_sprite_57: freeze
