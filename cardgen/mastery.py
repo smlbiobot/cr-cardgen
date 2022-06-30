@@ -27,6 +27,14 @@ class CardMastery:
         if self._cards_data is None:
             with open(self.cards_json, encoding='utf-8', mode='r') as f:
                 self._cards_data = json.load(f)
+
+        self._cards_data = [
+            c for c in self._cards_data
+            if c not in [
+                'super-mini-pekka',
+            ]
+        ]
+
         return self._cards_data
 
     @property
