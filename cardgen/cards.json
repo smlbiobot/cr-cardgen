@@ -726,17 +726,6 @@
         "id": 26000065
     },
     {
-        "key": "super-witch",
-        "name": "Super Witch",
-        "sc_key": "SuperWitch",
-        "elixir": 6,
-        "type": "Troop",
-        "rarity": "Legendary",
-        "arena": 5,
-        "description": "Summons Skeletons, shoots destructo beams, has glowing pink eyes that unfortunately don't shoot lasers.",
-        "id": 26000066
-    },
-    {
         "key": "elixir-golem",
         "name": "Elixir Golem",
         "sc_key": "ElixirGolem",
@@ -801,6 +790,17 @@
         "arena": 4,
         "description": "This pair of skeletal scorchers deal Area Damage and fly above the Arena. They also play a mean rib cage xylophone duet.",
         "id": 26000080
+    },
+    {
+        "key": "super-mini-pekka",
+        "name": "Super Mini P.E.K.K.A",
+        "sc_key": "SuperMiniPekka",
+        "elixir": 5,
+        "type": "Troop",
+        "rarity": "Legendary",
+        "arena": 14,
+        "description": "The Arena is a certified butterfly-free zone. No distractions for P.E.K.K.A, only destruction.",
+        "id": 26000082
     },
     {
         "key": "mother-witch",

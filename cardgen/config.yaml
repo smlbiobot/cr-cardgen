@@ -47,7 +47,7 @@ cards:
   ui_spells_sprite_32: musketeer
   ui_spells_sprite_33: minion-horde
   ui_spells_sprite_34: minions
-  ui_spells_sprite_35: mini-pekka
+  ui_spell_mini_pekka: mini-pekka
   ui_spells_sprite_36: miner
   ui_spells_sprite_37: mega-minion
   ui_spells_sprite_38: mega-knight
@@ -136,3 +136,4 @@ cards:
   ui_spell_super_lava_hound: super-lava-hound
   ui_spell_mighty_miner: mighty-miner
   ui_spell_super_witch: super-witch
+  ui_spell_super_mini_pekka: super-mini-pekka
