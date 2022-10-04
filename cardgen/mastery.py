@@ -17,10 +17,12 @@ class CardMastery:
     assets_folder = '/Users/sml/Dropbox/_projects/RoyaleAPI_dev/ui/mastery/mastery-assets'
     spells_folder = '/Users/sml/git/cr-cardgen/cardgen/card-src-104x132'
 
-    def __init__(self):
+    def __init__(self, limit_card_keys=None):
         self._cards_data = None
         self._card_filenames = None
         self._config = None
+
+        self.limit_card_keys = limit_card_keys
 
     @property
     def cards_data(self):
@@ -34,6 +36,11 @@ class CardMastery:
                 'super-mini-pekka',
             ]
         ]
+
+        if self.limit_card_keys is not None:
+            self._cards_data = [
+                c for c in self._cards_data if c.get('key') in self.limit_card_keys
+            ]
 
         return self._cards_data
 
@@ -119,5 +126,7 @@ class CardMastery:
 
 
 if __name__ == '__main__':
-    job = CardMastery()
+    job = CardMastery(
+        limit_card_keys=['night-witch'],
+    )
     job.run()

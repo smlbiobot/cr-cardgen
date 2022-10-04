@@ -33,7 +33,7 @@ cards:
   ui_spells_sprite_18: gems-3
   ui_spells_sprite_19: gems-2
   ui_spells_sprite_20: gems-1
-  ui_spells_sprite_21: royal-giant
+  royal-giant-2022-09: royal-giant
   ui_spells_sprite_22: knight
   ui_spells_sprite_23: archers
   ui_spells_sprite_24: rocket
@@ -76,7 +76,7 @@ cards:
   ui_spells_sprite_61: fireball
   ui_spells_sprite_62: executioner
   ui_spells_sprite_63: electro-wizard
-  ui_spells_sprite_64: night-witch
+  night-witch-card: night-witch
   ui_spells_sprite_65: dark-prince
   ui_spells_sprite_66: clone
   ui_spell_witch: witch

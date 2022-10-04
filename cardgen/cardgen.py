@@ -21,10 +21,23 @@ CONFIG = os.path.join("config.yaml")
 pngquant.config('/usr/local/bin/pngquant')
 
 
+
 def load_json(filename):
     """Load json by filename."""
     with open(filename, encoding='utf-8', mode='r') as f:
         data = json.load(f)
+
+    # limit_card_keys = None
+    limit_card_keys = [
+        'night-witch'
+    ]
+
+    if limit_card_keys is not None:
+        data = [
+            c for c in data if c.get('key') in limit_card_keys
+        ]
+
+
     return data
 
 
