@@ -29,7 +29,8 @@ def load_json(filename):
 
     # limit_card_keys = None
     limit_card_keys = [
-        'night-witch'
+        'monk',
+        'phoenix',
     ]
 
     if limit_card_keys is not None:
@@ -381,12 +382,16 @@ def main(arguments):
     create_size(150, 180, "cards-150-gold", is_gold=True)
     create_png8("card-gold-png8", is_gold=True)
 
-    copyfiles(
-        src_root='/Users/sml/git/cr-cardgen/cardgen',
-        dst_root='/Users/sml/git/cr-api-web/public/static/img'
-    )
+    do_copy_files = True
 
-    copyfiles(dst_root='/Users/sml/git/cr-api-assets', include_png8=True)
+    if do_copy_files:
+
+        copyfiles(
+            src_root='/Users/sml/git/cr-cardgen/cardgen',
+            dst_root='/Users/sml/git/cr-api-web/public/static/img'
+        )
+
+        copyfiles(dst_root='/Users/sml/git/cr-api-assets', include_png8=True)
 
 
 if __name__ == '__main__':
